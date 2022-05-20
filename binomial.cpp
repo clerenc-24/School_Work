@@ -17,6 +17,8 @@ int t(int n){
 	}
 	return counter;
 }
+//number of k-element subsets in n objects
+//recursive function
 int binomial(int n,int k){	
 	if (n <= 0){
 		return 1;
@@ -29,8 +31,11 @@ int binomial2(int n, int k){
 	for (int i = 1; i <= k; i++){
 		counter *= n -i + 1;
 		counter /= i;
-	}return counter;
+	}
+	return counter;
 }
+
+//outputs the coefficients of the k-th row of the pascal triangle 
 void pascal(int k){
 	for (int i = 0; i < k; i++){
 		for (int j = 0; j < i; j++){
@@ -38,10 +43,11 @@ void pascal(int k){
 		cout << "\n";
 	}
 }
+//bubble sort implementation
 void bubble(vector<int>& n){
-	
-	for (int i =n.size() - 1 ;i > 0 ; i--){
+	for (int i = n.size() - 1 ;i > 0 ; i--){
 		for (int j = 0; j < i; j ++){
+			//checks if current element if greater than the next element
 			if (n[j] > n[j+1]){
 				int tmp = n[j];
 				n[j] = n[j+1];
